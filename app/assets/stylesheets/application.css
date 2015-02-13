@@ -1,0 +1,126 @@
+/*
+ *= require font-awesome
+ */
+
+
+nav li:hover {
+    background-color: #3E84E8;
+    color: #FFC0CB;
+}
+.navbar .nav > li > a {
+    color:  #FF8D51;
+}
+/*#avatar {
+  background-image: url('jarjar.jpg');
+}*/
+
+li a {
+	color: #FF8D51;
+}
+
+.btn-success {
+  width: 100%;
+/*  margin-left: ;*/
+}
+#read {
+  width: 200px;
+}
+
+
+
+#main {
+	   background-color: rgba(255,255,255,0.5);
+	   text-align: left;
+  	 width: 70%;
+  	 height: 100%;
+  	 display: block;
+  	 margin-left: auto;
+  	 margin-right: auto;
+  	 margin-top: 0px;
+}
+
+
+/*#main.container {
+  height: 100vh;
+}*/
+
+#home {
+	color: #030303;
+	margin-top: 0px;
+  	
+}
+
+#set {
+	margin-top: 300px;
+}
+.navbar {
+	margin-bottom: 0;
+}
+
+.navbar.navbar-default {
+	/*background-color: #45C2FF;*/
+	background-image: url('cloud.jpg');
+	border: 0px;
+	color: white;
+	margin-bottom: 0px;
+}
+
+.close {
+  width: 100px;
+  height: 30px;
+  margin-left: 10px;
+
+}
+
+body {
+	background-image: url('background.jpg');
+	background-size: 100%;
+	background-attachment: fixed;
+}
+
+#avatar {
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+#header {
+  margin-left: 10px;
+}
+
+/*!
+ * Bootstrap Modal
+ *
+ * Copyright Jordan Schroter
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Boostrap 3 patch for for bootstrap-modal. Include BEFORE bootstrap-modal.css!
+ */
+
+/*body.modal-open, 
+.modal-open .navbar-fixed-top, 
+.modal-open .navbar-fixed-bottom {
+  margin-right: 0;
+}*/
+
+/*.modal {
+  left: 50%;
+  bottom: auto;
+  right: auto;
+  padding: 0;
+  width: 500px;
+  margin-left: -250px;
+  background-color: #ffffff;
+  border: 1px solid #999999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+}*/
+
+/*.modal.container {
+  max-width: none;
+}*/

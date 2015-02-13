@@ -1,0 +1,65 @@
+<h1>Inbox</h1>
+
+<% @messages.each do |m| %>
+<% if m.author != current_user.username %>
+	New message from <%= m.author %>: <%=m.subject %>. 
+    <% if m.read %>
+        <a href="#" class="btn btn-sm btn-info"
+     data-toggle="modal"
+     data-target="#<%=m.id%>Modal" id='read' data-value='<%=m.id%>'>Read</a><br>
+    <% else %>
+        <a href="#" class="btn btn-sm btn-info"
+     data-toggle="modal"
+     data-target="#<%=m.id%>Modal" id='read' data-value='<%=m.id%>'>Unread</a><br>
+    <%end%>
+        
+
+      <div class="modal fade" id="<%=m.id%>Modal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true" data-value='<%=m.id%>'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel"><%= m.subject %><%=m.created_at.strftime(", sent on %m/%d/%y at %I:%M%p")%></h4>
+            </div>
+            <div class="modal-body">
+                <div id='content'>
+                	<p><%= m.content %></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="close" data-dismiss="modal" data-value='<%=m.id%>'>Close</button>
+                <a href="/delete/<%=m.id%>" class="btn btn-primary">Delete</a>
+                <a href="/messages/reply/<%=m.id%>" name='reply' data-value='<%=m.id%>'class="btn btn-primary">Reply</a>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- 	<%= m.content %> -->
+	<br>
+	<%end%>
+<%end%>
+
+<br>
+<br>
+<a href="/" class="btn btn-sm btn-primary">Home</a><br>
+
+<script>
+$(document).on('click', '.close', function(e) {
+	// console.log($(this).data('value'));
+    var id = $(this).data('value');
+    console.log(id);
+ 	$.post('/messages/read', {id: id});
+    window.location.reload();
+})
+
+$('[name="reply"]').on('click', function () {
+    var id = $(this).data('value');
+    console.log(id);
+    $.post('/messages/read', {id: id});
+})
+</script>
+
+<style>
+#main {
+	height: 100vh;
+}
+</style>

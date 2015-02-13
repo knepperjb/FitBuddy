@@ -1,0 +1,21 @@
+<div class='row'>
+	<div class='col-xs-12'>
+		<h1><%= @user.username %></h1>
+
+	<%= form_tag("/messages/new", method: "post") do %>
+ 	 <%= text_field_tag(:subject, nil, placeholder: "subject") %><br>
+ 	 <%= text_area_tag(:content, nil, placeholder: "content", :cols => "50", :rows => "10") %><br>
+ 	 <%= hidden_field_tag(:target_id, @user.id) %>
+ 	 <%= hidden_field_tag(:reciever, @user.username) %>
+ 	 <%= hidden_field_tag(:sender_id, current_user.id) %>
+    <%= submit_tag("submit", class: "button") %>
+	<% end %>
+	</div>
+
+</div>
+
+<style>
+#main {
+	height: 100vh;
+}
+</style>
