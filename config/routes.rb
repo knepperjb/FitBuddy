@@ -18,6 +18,13 @@ Rails.application.routes.draw do
   get '/delete/:id', to: 'messages#delete'
   get '/messages/reply/:id', to: 'messages#reply'
   post '/messages/read', to: 'messages#read'
+  get '/users/description', to: 'users#description'
+
+  post '/users/description', to: 'users#description_update'
+
+  post '/set-experience', to: 'users#set_experience'
+  get '/workout', to: 'workouts#new'
+  post '/workout', to: 'workouts#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

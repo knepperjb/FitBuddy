@@ -48,7 +48,9 @@ $(document).on('click', '.close', function(e) {
     var id = $(this).data('value');
     console.log(id);
  	$.post('/messages/read', {id: id});
-    window.location.reload();
+    setTimeout(function () {
+        window.location.reload();
+    }, 200)
 })
 
 $('[name="reply"]').on('click', function () {
@@ -58,8 +60,4 @@ $('[name="reply"]').on('click', function () {
 })
 </script>
 
-<style>
-#main {
-	height: 100vh;
-}
-</style>
+

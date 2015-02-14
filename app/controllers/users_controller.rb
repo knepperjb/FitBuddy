@@ -3,20 +3,37 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   def home
     @user = User.find(current_user.id)
-    @messages = Message.where(target_id: @user.id)
-    @count = []
-    if @messages
-      @messages.entries.each do |message|
-        if !message.read
-          @count.push(message)
-        end
-      end
-    end
-    @x = @count.length
+    @unread_message_count = Message.where(target_id: @user.id, read: false).count
+  end
+
+  def description
+    @user = User.find(current_user.id)
+  end
+
+  def description_update
+    user = User.find(current_user.id)
+    user.description = params[:description]
+    user.save
+    redirect_to '/'
+  end
+
+  def set_experience
+    user = User.find(current_user.id)
+    user.level = params[:exp]
+    user.save
+    redirect_to '/'
   end
 
   def location
     @user = User.find(current_user.id)
+  end
+
+  def update
+    user = User.find(params[:id])
+    user.description = params[:description]
+    byebug
+    user.save
+    redirect_to '/'
   end
 
   skip_before_action :verify_authenticity_token
@@ -55,4 +72,11 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(username: params[:username])
   end
+
+  private
+  def user_params
+    params.require(:description)
+    params.permit(:description)
+  end
+
 end

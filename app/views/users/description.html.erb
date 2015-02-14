@@ -1,0 +1,15 @@
+
+<div id='desc'>
+	<center>
+		<h3>This is where you can tell other users about yourself.  Talk about your experience level, your motivation, hobbies, and anything else you want potential workout partners to know.</h3>
+	<%= form_tag("/users/description", method: "post") do %>
+ 	 <%= text_area_tag(:description, nil, placeholder: 'description', :cols => "50", :rows => "10") %><br>
+    <%= submit_tag("submit description", class: "btn btn-default") %>
+	<% end %>
+	<br>
+	<a href='/' class='btn btn-default'>cancel</a>
+	<center>
+
+
+ </div>
+

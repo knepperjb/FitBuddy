@@ -15,17 +15,25 @@
   </div>
   <div class='col-xs-7' id='header'>
     <h1>Hi <%= current_user.username %></h1>
-    <p>About me will eventually go here</p>
-   
+    <p id='age'> <%=current_user.sex%> <%=current_user.age%></p>
+    <% if current_user.description %>
+    <p class='aboutme'><%= current_user.description %></p>
+    <%else%>
+    <p class='aboutme'>Add your about me here.</p>
+    <%end%>
+    <a class='btn btn-default' href='/users/description'>Edit description</a>
+
   </div>
 </div>
 
 <div class='row-fluid'>
   <div class='col-xs-4'>
   	<!-- <h1 id='home'>Welcome, <%= current_user.username %></h1> -->
-    <h2 id='fitgoal'><%= current_user.goal %></h2>
-     <% if @x != 0 %>
-     <a href='/messages/show' class="btn btn-lg btn-success"><i class="fa fa-envelope-o" style='color: red;'><%=@x%></i>  Messages</a><br><br>
+    <p id='fitgoal'><%= current_user.goal %></p>
+    <p id='level'><%= current_user.level %></p><br>
+
+     <% if @unread_message_count > 0 %>
+     <a href='/messages/show' class="btn btn-lg btn-success"><i class="fa fa-envelope-o" style='color: red;'><%=@unread_message_count%></i>  Messages</a><br><br>
      <%else%>
      <a href="/messages/show" class="btn btn-lg btn-success">Messages</a><br><br>
      <%end%>
@@ -34,10 +42,15 @@
      data-target="#basicModal">Update my fitness goal</a><br><br>
      <a href="#" class="btn btn-lg btn-success"
      data-toggle="modal"
+     data-target="#expModal">Update my experience</a><br><br>
+     <a href="#" class="btn btn-lg btn-success"
+     data-toggle="modal"
      data-target="#locModal" id='locbutton'>Update my location</a><br><br>
+     <a href="/workout" class="btn btn-lg btn-success" id='workout'>Post a workout</a><br><br>
      <a href="#" class="btn btn-lg btn-success"
      data-toggle="modal"
      data-target="#mapModal" id='mapbutton'>Find FitFriends!</a><br><br>
+
 
   </div>
   <div class='col-xs-8'>
@@ -73,6 +86,27 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target='#basicModal' id='setgoal'>Save changes</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="expModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Select your fitness level:</h4>
+            </div>
+            <div class="modal-body">
+                <select id='experience'>
+                  <option value='beginner'>beginner</option>
+                  <option value='intermediate'>intermediate</option>
+                  <option value='expert'>expert</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target='#expModal' id='setexp'>Save changes</button>
         </div>
     </div>
   </div>
@@ -187,7 +221,15 @@
 
 
 
-
+<style type="text/css">
+/*
+ * This page doesn't cooperate with setting the height to 100%,
+ * so we'll set it back to the default. Sorry about that.
+ */
+#main {
+  height: auto !important;
+}
+</style>
    
 
 

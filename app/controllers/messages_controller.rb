@@ -62,6 +62,6 @@ class MessagesController < ApplicationController
     params.require(:author)
     params.require(:reciever)
     params.require(:read)
-    params.permit(:sender_id, :target_id, :subject, :content, :author, :reciever, :read)
+    params.permit(*%i[sender_id target_id subject content author reciever read])
   end
 end
