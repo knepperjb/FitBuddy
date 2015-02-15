@@ -17,9 +17,7 @@ nav li:hover {
 .navbar .nav > li > a {
     color:  #FF8D51;
 }
-/*#avatar {
-  background-image: url('jarjar.jpg');
-}*/
+
 
 .navbar-default .navbar-brand {
   color: white;
@@ -84,8 +82,6 @@ li a {
 }
 
 .navbar.navbar-default {
-	/*background-color: #45C2FF;*/
-	/*background-image: url('cloud.jpg');*/
  background: rgb(114,71,170); /* Old browsers */
  background: -moz-linear-gradient(top,  rgba(114,71,170,1) 0%, rgba(99,38,97,1) 100%); /* FF3.6+ */
  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(114,71,170,1)), color-stop(100%,rgba(99,38,97,1))); /* Chrome,Safari4+ */
@@ -132,38 +128,3 @@ body {
   font-size: 150%;
 }
 
-/*!
- * Bootstrap Modal
- *
- * Copyright Jordan Schroter
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Boostrap 3 patch for for bootstrap-modal. Include BEFORE bootstrap-modal.css!
- */
-
-/*body.modal-open, 
-.modal-open .navbar-fixed-top, 
-.modal-open .navbar-fixed-bottom {
-  margin-right: 0;
-}*/
-
-/*.modal {
-  left: 50%;
-  bottom: auto;
-  right: auto;
-  padding: 0;
-  width: 500px;
-  margin-left: -250px;
-  background-color: #ffffff;
-  border: 1px solid #999999;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
-  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
-  background-clip: padding-box;
-}*/
-
-/*.modal.container {
-  max-width: none;
-}*/
