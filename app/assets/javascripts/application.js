@@ -15,7 +15,7 @@
 //= require bootstrap-datepicker
 //= require goal
 //= require location
-//= rewuire map
+//= require map
 
 
 
