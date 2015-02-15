@@ -6,6 +6,10 @@ html, body {
   height: 100%;
 }
 
+#work {
+  margin-top: 20px;
+}
+
 nav li:hover {
     background-color: #3E84E8;
     color: #FFC0CB;
@@ -64,6 +68,7 @@ li a {
 /*#main.container {
   height: 100vh;
 }*/
+*= require bootstrap-datepicker
 
 #home {
 	color: #030303;
@@ -119,11 +124,11 @@ body {
   margin-left: 10px;
 }
 
-#fitgoal {
+.fitgoal {
   font-size: 250%;
 }
 
-#level {
+.level {
   font-size: 150%;
 }
 

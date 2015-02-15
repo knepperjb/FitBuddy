@@ -29,8 +29,8 @@
 <div class='row-fluid'>
   <div class='col-xs-4'>
   	<!-- <h1 id='home'>Welcome, <%= current_user.username %></h1> -->
-    <p id='fitgoal'><%= current_user.goal %></p>
-    <p id='level'><%= current_user.level %></p><br>
+    <p class='fitgoal'><%= current_user.goal %></p>
+    <p class='level'><%= current_user.level %></p><br>
 
      <% if @unread_message_count > 0 %>
      <a href='/messages/show' class="btn btn-lg btn-success"><i class="fa fa-envelope-o" style='color: red;'><%=@unread_message_count%></i>  Messages</a><br><br>
@@ -46,7 +46,7 @@
      <a href="#" class="btn btn-lg btn-success"
      data-toggle="modal"
      data-target="#locModal" id='locbutton'>Update my location</a><br><br>
-     <a href="/workout" class="btn btn-lg btn-success" id='workout'>Post a workout</a><br><br>
+     <a href="/workouts/new" class="btn btn-lg btn-success" id='workout'>Post a workout</a><br><br>
      <a href="#" class="btn btn-lg btn-success"
      data-toggle="modal"
      data-target="#mapModal" id='mapbutton'>Find FitFriends!</a><br><br>
@@ -54,17 +54,13 @@
 
   </div>
   <div class='col-xs-8'>
-    <h3 style='margin-top: 0px;'>Workout goes here:</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <br>
-    <h3>Workout goes here:</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <br>
-    <h3>Workout goes here:</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <br>
-    <h3>Workout goes here:</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h2>Your workout feed:</h2>
+    <% @workouts.each do |w| %>
+    <h3><a href='/<%= w.author %>'><%= w.author %></a> posted: <%= w.title %> on: <%=w.date%></h3>
+    <p><%= w.content %></p>
+    <%end%>
+
+    
   </div>
 </div>
 

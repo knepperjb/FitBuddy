@@ -4,6 +4,14 @@ class UsersController < ApplicationController
   def home
     @user = User.find(current_user.id)
     @unread_message_count = Message.where(target_id: @user.id, read: false).count
+    subscriptions = Subscription.where(subscriber_id: @user.id)
+    @workouts = []
+    subscriptions.each do |s|
+      workout = Workout.where(user_id: s.subscribee_id)
+      @workouts.push(workout)
+    end
+    @workouts.flatten!
+    @workouts.reverse!
   end
 
   def description
@@ -71,6 +79,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(username: params[:username])
+    @workouts = Workout.where(user_id: @user.id)
   end
 
   private

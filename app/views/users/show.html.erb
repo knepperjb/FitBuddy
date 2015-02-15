@@ -6,11 +6,23 @@
 		<%else%>
 		<img src='<%= @user.image %>'></img>
 		<%end%>
-		<h2><%= @user.goal %></h2>
+		<p class='fitgoal'><%= @user.goal %></p>
+		<p class='level'><%= @user.level %></p>
 
 	</div>
-	<div class='col-xs-7'>
-		<h1>About <%= @user.username %></h1>
+	<div class='col-xs-7' class='header'>
+		<h1>About <%= @user.username %> <span>
+			<% if current_user && current_user.username != @user.username %>
+				<% if !current_user.subscribees.include?(@user) %>
+				<a href='/<%=@user.id%>/subscribe' class='btn btn-info'>Follow</a>
+				<%elsif current_user.subscribees.include?(@user) %>
+				<a href='/<%=@user.id%>/subscription/delete' class='btn btn-info'>Unfollow</a>
+				<%end%>
+			<%end%>
+			</span></h1>
+			<p id='age'> <%=@user.sex%> <%=@user.age%></p>
+
+		<p class='aboutme'> <%=@user.description%></p>
 	</div>
 
 </div>
@@ -32,7 +44,24 @@
 		<div id='workouts'>
 			<h2>Workouts posted by <%= @user.username %></h2>
 		</div>
+		<div>
+			<% @workouts.each do |w| %>
+			<h3><%= w.title %> <%=w.date%></h3>
+			<p><%= w.content %><p>
+			<%end%>
+		</div>
+		</div>
 	</div>
 
 </div>
+
+<style type="text/css">
+/*
+ * This page doesn't cooperate with setting the height to 100%,
+ * so we'll set it back to the default. Sorry about that.
+ */
+#main {
+  height: auto !important;
+}
+</style>
 

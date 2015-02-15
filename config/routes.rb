@@ -23,8 +23,11 @@ Rails.application.routes.draw do
   post '/users/description', to: 'users#description_update'
 
   post '/set-experience', to: 'users#set_experience'
-  get '/workout', to: 'workouts#new'
-  post '/workout', to: 'workouts#create'
+  get '/workouts/new', to: 'workouts#new'
+  post '/workouts/new', to: 'workouts#create'
+  get '/:id/subscribe', to: 'subscriptions#create'
+  get '/:id/subscription/delete', to: 'subscriptions#delete'
+  # post 'subscriptions/new', to: 'subscriptions#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
