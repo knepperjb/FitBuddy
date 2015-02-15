@@ -1,0 +1,18 @@
+
+
+<script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
+
+  <div id='work'>
+	<center>
+	<%= form_tag("/workouts/new", method: "post") do %>
+	 	 <%= text_field_tag(:title, nil, placeholder: "title") %><br><br>
+	 	 <%= text_area_tag(:content, nil, placeholder: "content", :cols => "40", :rows => "10") %><br>
+		<input type="text" data-provide='datepicker' name='date' placeholder='date'><br>
+	    <%= submit_tag("submit", class: "button") %>
+		<% end %>
+	</center>
+</div>
