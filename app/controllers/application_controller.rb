@@ -18,5 +18,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :goal, :email, :password, :description, :level, :password_confirmation, :current_password) }
   end
 
+  def after_sign_up_path_for(resource)
+    # after_sign_in_path_for(resource)
+    '/set-location'
+  end
+
   
 end
