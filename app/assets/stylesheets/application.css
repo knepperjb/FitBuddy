@@ -66,8 +66,9 @@ li a {
 /*#main.container {
   height: 100vh;
 }*/
+/*
 *= require bootstrap-datepicker
-
+*/
 #home {
 	color: #030303;
 	margin-top: 0px;
