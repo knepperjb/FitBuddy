@@ -19,8 +19,8 @@
     <%else%>
     <p class='aboutme'>Add your about me here.</p>
     <%end%>
-    <a class='btn btn-default' href='/users/description'>Edit description</a>
-    <a class='btn btn-default' href='/edit/image'>Edit picture</a>
+    <a class='btn btn-default' href='/users/description'>Edit description <i class="fa fa-pencil-square-o"></i></a>
+    <a class='btn btn-default' href='/edit/image'>Edit picture <i class="fa fa-camera"></i></a>
 
   </div>
 </div>
@@ -33,22 +33,22 @@
 
      <a href="#" class="btn btn-lg btn-success"
      data-toggle="modal"
-     data-target="#mapModal" id='mapbutton'>Find FitBuddies!</a><br><br>
+     data-target="#mapModal" id='mapbutton'>Find FitBuddies! <i class="fa fa-users"></i></a><br><br>
      <% if @unread_message_count > 0 %>
-     <a href='/messages/show' class="btn btn-lg btn-success"><i class="fa fa-envelope-o" style='color: red;'><%=@unread_message_count%></i>  Messages</a><br><br>
+     <a href='/messages/show' class="btn btn-lg btn-success"><i class="fa fa-envelope-o" style='color: red;'><%=@unread_message_count%></i>  Messages <i class='fa fa-comment'></i></a><br><br>
      <%else%>
-     <a href="/messages/show" class="btn btn-lg btn-success">Messages</a><br><br>
+     <a href="/messages/show" class="btn btn-lg btn-success">Messages <i class='fa fa-comment'></i></a><br><br>
      <%end%>
     <a href="#" class="btn btn-lg btn-success"
      data-toggle="modal"
-     data-target="#basicModal">Update my fitness goal</a><br><br>
+     data-target="#basicModal">Update my fitness goal <i class="fa fa-road"></i></a><br><br>
      <a href="#" class="btn btn-lg btn-success"
      data-toggle="modal"
-     data-target="#expModal">Update my experience</a><br><br>
+     data-target="#expModal">Update my experience <i class="fa fa-level-up"></i></a><br><br>
      <a href="#" class="btn btn-lg btn-success"
      data-toggle="modal"
-     data-target="#locModal" id='locbutton'>Update my location</a><br><br>
-     <a href="/workouts/new" class="btn btn-lg btn-success" id='workout'>Post a workout</a><br><br>
+     data-target="#locModal" id='locbutton'>Update my location <i class="fa fa-globe"></i></a><br><br>
+     <a href="/workouts/new" class="btn btn-lg btn-success" id='workout'>Post a workout <i class="fa fa-plus-square"></i></a><br><br>
 
 
   </div>

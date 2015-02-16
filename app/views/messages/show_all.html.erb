@@ -27,8 +27,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="close" data-dismiss="modal" data-value='<%=m.id%>'>Close</button>
-                <a href="/delete/<%=m.id%>" class="btn btn-primary">Delete</a>
-                <a href="/messages/reply/<%=m.id%>" name='reply' data-value='<%=m.id%>'class="btn btn-primary">Reply</a>
+                <a href="/delete/<%=m.id%>" class="btn btn-primary">Delete <i class="fa fa-trash-o"></i></a>
+                <a href="/messages/reply/<%=m.id%>" name='reply' data-value='<%=m.id%>'class="btn btn-primary">Reply <i class="fa fa-reply"></i></a>
         </div>
     </div>
   </div>
@@ -40,7 +40,7 @@
 
 <br>
 <br>
-<a href="/" class="btn btn-sm btn-primary">Home</a><br>
+<a href="/" class="btn btn-sm btn-primary">Home <i class="fa fa-home"></i></a><br>
 
 <script>
 $(document).on('click', '.close', function(e) {
