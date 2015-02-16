@@ -82,6 +82,23 @@ class UsersController < ApplicationController
     @workouts = Workout.where(user_id: @user.id)
   end
 
+  def addimage
+    user = User.find(current_user.id)
+    user.image = params[:image]
+    user.save
+    redirect_to '/'
+  end
+
+ 
+  def gravatar_link
+    user = User.find(current_user.id)
+    gravatar = Digest::MD5::hexdigest(user.email).downcase
+    url = "http://gravatar.com/avatar/#{gravatar}.png?s=200"
+    user.image = url
+    user.save
+    redirect_to '/'
+  end
+
   private
   def user_params
     params.require(:description)

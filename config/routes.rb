@@ -27,6 +27,9 @@ Rails.application.routes.draw do
   post '/workouts/new', to: 'workouts#create'
   get '/:id/subscribe', to: 'subscriptions#create'
   get '/:id/subscription/delete', to: 'subscriptions#delete'
+  get '/edit/image', to: 'users#image'
+  post '/edit/image', to: 'users#addimage'
+  get '/gravatar/link', to: 'users#gravatar_link'
   # post 'subscriptions/new', to: 'subscriptions#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,11 @@
+<div id='image' style='margin-top: 20px;'>
+	<a href='/gravatar/link' class='btn btn-info'>Link my gravatar</a>
+	<br>
+	<h3>Or enter an image url:</h3>
+	<%= form_tag('/edit/image', method: 'post') do %>
+	<%= text_field_tag(:image, nil, placeholder: 'image url') %>
+	<%= submit_tag('submit', class: 'btn btn-defalt') %>
+	<%end%>
+	<br>
+	<a href='/' class='btn btn-default'>cancel</a>
+</div>
