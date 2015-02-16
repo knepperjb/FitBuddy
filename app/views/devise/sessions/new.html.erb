@@ -1,26 +1,40 @@
-<h2>Log in</h2>
+<div class='row'>
+  <div class='col-xs-4'>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <h2>Log in</h2>
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %><br />
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <% if devise_mapping.rememberable? -%>
+        <div class="field">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      <% end -%>
+
+      <div class='field'>
+        <button type='submit' class='btn btn-info'>Log in</button>
+      </div>
+    <% end %>
+    <br>
+    <a href='/users/sign_up' class='btn btn-info'>Sign Up</a><br><br>
+    <a href='/users/password/new'>Forgot your password</a>
+
   </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <div class='col-xs-7'>
+    <h2> Welcome to FitBuddy</h2>
+      <p id='about'>FitBuddy is a service for those with a passion for fitness and staying healthy.  FitBuddy joins like-minded users in your area so you don't have to get fit by yourself.  Traveling?  Simply set your location at the click of a button to wherever you go and find fit friends! </p>
+      <h2>How it works:</h2>
+      <p>It's easy!  Just sign up.  You will be prompted to allow access to your location.  After setting your location, simply click the find FitBuddies button and start messaging other users.  You can post workouts, follow other user's workouts, and update your profile.</p>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
