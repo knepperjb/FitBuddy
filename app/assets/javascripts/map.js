@@ -32,7 +32,7 @@ var mapOptions = {
 
               var info = new google.maps.InfoWindow({
               content: '<img src='+ x.image +'></img>' + '<br>' + '<b>' + x.username + '</b>' + '<br>' + x.goal,
-              maxWidth: 100
+              maxWidth: 300
               });
                google.maps.event.addListener(marker, 'mouseover', function(){
                info.open(map, marker)
