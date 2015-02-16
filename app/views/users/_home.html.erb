@@ -31,6 +31,9 @@
     <p class='fitgoal'><%= current_user.goal %></p>
     <p class='level'><%= current_user.level %></p><br>
 
+     <a href="#" class="btn btn-lg btn-success"
+     data-toggle="modal"
+     data-target="#mapModal" id='mapbutton'>Find FitBuddies!</a><br><br>
      <% if @unread_message_count > 0 %>
      <a href='/messages/show' class="btn btn-lg btn-success"><i class="fa fa-envelope-o" style='color: red;'><%=@unread_message_count%></i>  Messages</a><br><br>
      <%else%>
@@ -46,9 +49,6 @@
      data-toggle="modal"
      data-target="#locModal" id='locbutton'>Update my location</a><br><br>
      <a href="/workouts/new" class="btn btn-lg btn-success" id='workout'>Post a workout</a><br><br>
-     <a href="#" class="btn btn-lg btn-success"
-     data-toggle="modal"
-     data-target="#mapModal" id='mapbutton'>Find FitFriends!</a><br><br>
 
 
   </div>
