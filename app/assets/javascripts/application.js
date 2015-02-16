@@ -16,7 +16,6 @@
 //= require goal
 //= require location
 //= require map
-//= require newlocation
 
 
 
