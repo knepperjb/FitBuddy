@@ -55,7 +55,7 @@
   <div class='col-xs-8'>
     <h2>Your workout feed:</h2>
     <% @workouts.each do |w| %>
-    <h3><a href='/<%= w.author %>'><%= w.author %></a> posted: <%= w.title %> on: <%=w.date%></h3>
+    <h3><a href='/<%= w.author %>'><%= w.author %></a> posted "<%= w.title %>" for <%=w.date%></h3>
     <p><%= w.content %></p>
     <%end%>
 
