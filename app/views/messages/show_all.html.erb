@@ -1,7 +1,6 @@
 <h1>Inbox</h1>
 
 <% @messages.each do |m| %>
-<% if m.author != current_user.username %>
 	New message from <%= m.author %>: <%=m.subject %>. 
     <% if m.read %>
         <a href="#" class="btn btn-sm btn-info"
@@ -35,7 +34,6 @@
 </div>
 <!-- 	<%= m.content %> -->
 	<br>
-	<%end%>
 <%end%>
 
 <br>
