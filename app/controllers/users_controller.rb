@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:contact]
   def home
     @user = User.find(current_user.id)
     @unread_message_count = Message.where(target_id: @user.id, read: false).count
@@ -91,6 +91,9 @@ class UsersController < ApplicationController
 
   def search
     @user = User.find_by(username: params[:username])
+  end
+
+  def contact
   end
 
  
