@@ -89,6 +89,10 @@ class UsersController < ApplicationController
     redirect_to '/'
   end
 
+  def search
+    @user = User.find_by(username: params[:username])
+  end
+
  
   def gravatar_link
     user = User.find(current_user.id)
