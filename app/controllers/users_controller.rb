@@ -73,7 +73,7 @@ class UsersController < ApplicationController
   def find_friends
     user = User.find(current_user.id)
     @friends = User.within(20, :origin => [user.lat, user.lng])
-
+    @friends.to_a.select! { |f| f.lat }
     render :json => @friends
   end
 
