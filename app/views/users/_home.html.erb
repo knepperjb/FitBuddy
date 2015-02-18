@@ -31,9 +31,14 @@
     <p class='fitgoal'><%= current_user.goal %></p>
     <p class='level'><%= current_user.level %></p><br>
 
+     <% if current_user.lat %>
      <a href="#" class="btn btn-lg btn-success"
      data-toggle="modal"
      data-target="#mapModal" id='mapbutton'>Find FitBuddies! <i class="fa fa-users"></i></a><br><br>
+     <%else%>
+     <h4>you must set your location to find FitBuddies</h4>
+     <a href='#' class='btn btn-lg btn-success' disabled="disabled">Find FitBuddies! </a><br><br>
+     <%end%>
      <% if @unread_message_count > 0 %>
      <a href='/messages/show' class="btn btn-lg btn-success"><i class="fa fa-envelope-o" style='color: red;'><%=@unread_message_count%></i>  Messages <i class='fa fa-comment'></i></a><br><br>
      <%else%>

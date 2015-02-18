@@ -16,7 +16,7 @@ $(document).on('click', '#locbutton', function(e) {
 					lng: coor.lng
 				}
 			}).success(function() {
-				console.log('success')
+				window.location.reload();
 			})
 
 		})
