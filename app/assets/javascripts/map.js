@@ -3,7 +3,7 @@
 
 var mapOptions = {
                 center: { lat: 34, lng: 45},
-                zoom: 15
+                zoom: 13
               };
               console.log(mapOptions);
 
