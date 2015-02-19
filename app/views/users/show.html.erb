@@ -4,7 +4,7 @@
 		<% if @user.image == nil %>
 		<img src='<%= asset_path('avatar.svg') %>'></img>
 		<%else%>
-		<img src='<%= @user.image %>'></img>
+		<img src='<%= @user.image %>' style='max-width: 100%; max-height: 100%;'></img> 
 		<%end%>
 		<p class='fitgoal'><%= @user.goal %></p>
 		<p class='level'><%= @user.level %></p>
